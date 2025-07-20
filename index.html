@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Islamic History</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111;
+      color: #f0f0f0;
+    }
+    .site-header {
+      background-color: #1a1a1a;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #00d9ff;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      color: #00d9ff;
+    }
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(to right, #1f1f1f, #2a2a2a);
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin: 10px 0;
+      color: #00d9ff;
+    }
+    .quote {
+      font-style: italic;
+      margin: 10px 0;
+    }
+    .hero-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      margin-top: 20px;
+      border-radius: 20px;
+    }
+    .search-box {
+      margin-top: 20px;
+    }
+    .search-box input {
+      padding: 10px;
+      width: 300px;
+      border: none;
+      border-radius: 5px;
+    }
+    .search-box button {
+      padding: 10px 15px;
+      background-color: #00d9ff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+    .card-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+    .card {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      background-color: #2a2a2a;
+    }
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .card h3 {
+      margin-top: 10px;
+    }
+    .comments {
+      padding: 30px;
+      background-color: #181818;
+    }
+    .comments textarea {
+      width: 100%;
+      height: 100px;
+      border-radius: 10px;
+      padding: 10px;
+      border: none;
+      resize: vertical;
+    }
+    .comments button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #00d9ff;
+      border: none;
+      color: #000;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .site-footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1a1a1a;
+      color: #888;
+    }
+    .footer-img {
+      width: 80px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Islamic History</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="prophet.html">Prophet</a></li>
+        <li><a href="caliphs.html">Caliphs</a></li>
+        <li><a href="golden-age.html">Golden Age</a></li>
+        <li><a href="empires.html">Empires</a></li>
+        <li><a href="scholars.html">Scholars</a></li>
+        <li><a href="women.html">Women</a></li>
+      </ul>
+    </nav>
+    <div class="auth" id="auth"></div>
+  </header>
+
+  <section class="hero">
+    <h4>Note! the website is currently under creation. If you want to financially support, email us.</h4>
+    <h1>Journey Through Islamic History</h1>
+    <p class="quote">"Indeed, in their stories there is a lesson for those of understanding." (Qur'an 12:111)</p>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search topics..." oninput="showSuggestions()" />
+      <button onclick="searchTopics()">Search</button>
+      <div id="suggestions"></div>
+    </div>
+    <img src="Masjid-Al-Haram-Zamzam-Well.jpeg" alt="Islamic architecture" class="hero-img" />
+  </section>
+
+  <section class="card-section">
+    <div class="card" onclick="navigate('all-history.html')">
+      <img src="Ancient World Map.jpg" alt="All History by Story" />
+      <h3>All History by Story</h3>
+    </div>
+    <div class="card" onclick="navigate('Prophet’s Life.html')">
+      <img src="Beauty-edited.jpg" alt="Prophet’s Life" />
+      <h3>The Prophet’s Life ﷺ</h3>
+    </div>
+    <div class="card" onclick="navigate('caliphs.html')">
+      <img src="umayyad_mosque_637237.jpg" alt="Caliphate Era" />
+      <h3>Caliphate Era</h3>
+    </div>
+    <div class="card" onclick="navigate('golden-age.html')">
+      <img src="d.webp" alt="Golden Age" />
+      <h3>Golden Age</h3>
+    </div>
+    <div class="card" onclick="navigate('empires.html')">
+      <img src="images.png" alt="Islamic Empires" />
+      <h3>Islamic Empires</h3>
+    </div>
+    <div class="card" onclick="navigate('scholars.html')">
+      <img src="pngtree-microscope-with-lab-glassware-science-laboratory-research-and-development-concept-image_16413146.jpg" alt="Notable Scholars" />
+      <h3>Notable Scholars</h3>
+    </div>
+    <div class="card" onclick="navigate('inventions.html')">
+      <img src="optimized-muslim-inventions-ibn-alhaitham.jpg" alt="Islamic Inventions" />
+      <h3>Inventions</h3>
+    </div>
+    <div class="card" onclick="navigate('women.html')">
+      <img src="jihad.png" alt="Women in History" />
+      <h3>Women in History</h3>
+    </div>
+  </section>
+
+  <section class="comments">
+    <h2>Leave a Comment</h2>
+    <textarea id="commentBox" placeholder="Your thoughts..."></textarea>
+    <button onclick="submitComment()">Submit</button>
+    <div id="commentSection"></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <img src="5b_1800x1800_8cf91c14-77f6-451c-bae1-4cf17703bcb1.webp" alt="Islamic Calligraphy" class="footer-img" />
+      <p>&copy; 2025 Islamic History Archive | Built with ❤️</p>
+    </div>
+  </footer>
+
+  <script>
+    function navigate(page) {
+      window.location.href = page;
+    }
+
+    function showSuggestions() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const suggestions = document.getElementById('suggestions');
+      suggestions.innerHTML = '';
+      if (input.length === 0) return;
+      const pages = ['prophet', 'caliphs', 'golden age', 'empires', 'scholars', 'inventions', 'women'];
+      pages.forEach(page => {
+        if (page.includes(input)) {
+          const div = document.createElement('div');
+          div.textContent = page;
+          div.style.cursor = 'pointer';
+          div.onclick = () => {
+            window.location.href = page.replace(/\s/g, '-') + '.html';
+          };
+          suggestions.appendChild(div);
+        }
+      });
+    }
+
+    function searchTopics() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const match = ['prophet', 'caliphs', 'golden-age', 'empires', 'scholars', 'inventions', 'women'].find(p => p.includes(input));
+      if (match) window.location.href = match + '.html';
+      else alert('No matching topic found.');
+    }
+
+    function submitComment() {
+      const commentBox = document.getElementById('commentBox');
+      const commentText = commentBox.value.trim();
+      if (!commentText) return alert('Please enter a comment.');
+      const commentSection = document.getElementById('commentSection');
+      const comment = document.createElement('div');
+      comment.textContent = commentText;
+      comment.style.margin = '10px 0';
+      comment.style.padding = '10px';
+      comment.style.backgroundColor = '#222';
+      comment.style.borderRadius = '10px';
+      commentSection.appendChild(comment);
+      commentBox.value = '';
+    }
+  </script>
+</body>
+</html>
