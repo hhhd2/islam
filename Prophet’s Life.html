@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Life of Prophet Muhammad ﷺ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', 'Noto Naskh Arabic', serif;
+      background: url('https://www.transparenttextures.com/patterns/gplay.png') repeat;
+      background-color: #fdf9f2;
+      color: #2d2d2d;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: #004225;
+      padding: 1rem 2rem;
+      color: white;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .section h2 {
+      color: #006b3c;
+      margin-bottom: 1rem;
+    }
+    .section p {
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .audio-player {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .back-button {
+      display: block;
+      width: fit-content;
+      margin: 3rem auto 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #007a5a;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .back-button:hover {
+      background-color: #00593f;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    The Life of Prophet Muhammad ﷺ
+  </header>
+
+  <section class="section">
+    <h2>Birth and Early Life</h2>
+    <p>Prophet Muhammad ﷺ was born in the city of Makkah in 570 CE, into the respected tribe of Quraysh. He was born an orphan and was cared for by his grandfather and later by his uncle Abu Talib.</p>
+
+    <h2>Youth and Reputation</h2>
+    <p>As he grew up, Muhammad ﷺ became known for his honesty and trustworthiness, earning the titles "Al-Amin" (The Trustworthy). He worked as a merchant and was admired for his integrity.</p>
+
+    <h2>Marriage to Khadijah رضي الله عنها</h2>
+    <p>At age 25, he married Khadijah, a noble and wealthy businesswoman. Their marriage was full of love and respect, and Khadijah was the first to believe in his Prophethood.</p>
+
+    <h2>First Revelation</h2>
+    <p>At age 40, while meditating in the Cave of Hira, Prophet Muhammad ﷺ received the first revelation through Angel Jibreel عليه السلام. It marked the beginning of his mission.</p>
+
+    <h2>Early Islam</h2>
+    <p>He began spreading the message of Islam, facing resistance from Quraysh leaders. Despite persecution, a small group of early Muslims formed around him.</p>
+
+    <h2>Migration to Madinah</h2>
+    <p>In 622 CE, he migrated to Madinah due to increasing hostility in Makkah. This event (Hijrah) marks the beginning of the Islamic calendar.</p>
+
+    <h2>Establishing a Community</h2>
+    <p>In Madinah, the Prophet ﷺ established a strong Muslim community based on justice, brotherhood, and worship. The Constitution of Madinah united Muslims and non-Muslims in peaceful coexistence.</p>
+
+    <h2>Major Battles</h2>
+    <p>He led Muslims in battles such as Badr, Uhud, and the Trench. Despite hardships, he maintained patience, humility, and faith in Allah.</p>
+
+    <h2>Conquest of Makkah</h2>
+    <p>In 630 CE, the Prophet ﷺ peacefully conquered Makkah, forgiving his enemies and removing idols from the Kaaba. His mercy amazed even his former opponents.</p>
+
+    <h2>Farewell Pilgrimage</h2>
+    <p>He delivered his final sermon at Mount Arafat, emphasizing equality, justice, and the rights of others. He reminded Muslims to follow the Qur'an and Sunnah.</p>
+
+    <h2>Passing and Legacy</h2>
+    <p>Prophet Muhammad ﷺ passed away in 632 CE. His legacy lives on in the hearts of over a billion Muslims worldwide, who continue to follow his example of mercy, truth, and guidance.</p>
+  </section>
+
+  <div class="audio-player">
+    <h3>Listen to Surah Al-Fatiha</h3>
+    <audio controls>
+      <source src="001.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  <div style="text-align: center;">
+    <button class="fatiha" onclick="toggleArabic()" style="margin-top: 1.5rem; padding: 0.7rem 1.2rem; border-radius: 25px; border: none; background-color: #004225; color: white; font-weight: bold; cursor: pointer;">
+      Full Arabic of Surah Al-Fatiha
+    </button>
+  </div>
+
+  <div id="fatihaArabic" style="margin-top: 1rem; font-size: 1.5rem; font-family: 'Noto Naskh Arabic', serif; display: none; text-align: center;">
+    <p>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+    <p>الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</p>
+    <p>الرَّحْمَٰنِ الرَّحِيمِ</p>
+    <p>مَالِكِ يَوْمِ الدِّينِ</p>
+    <p>إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</p>
+    <p>اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ</p>
+    <p>صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</p>
+  </div>
+</div>
+<script>
+  function toggleArabic() {
+    const section = document.getElementById('fatihaArabic');
+    section.style.display = section.style.display === 'none' ? 'block' : 'none';
+  }
+</script>
+
+  <a href=".html" class="back-button">← Back to Home</a>
+
+</body>
+</html>

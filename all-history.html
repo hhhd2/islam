@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All History by Story</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display','Noto Naskh Arabic', serif;
+      background: url('https://www.transparenttextures.com/patterns/arabesque.png') repeat;
+      background-color: #fdfcf8;
+      color: #2e2e2e;
+      overflow-x: hidden;
+    }
+    .banner {
+      width: 100%;
+      height: 260px;
+      background: url('grand-arch.jpg') center/cover no-repeat;
+      border-bottom: 5px solid #007a5a;
+      position: relative;
+    }
+    .banner h1 {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 2.5rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    }
+    .content {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h2 {
+      color: #004d3a;
+      text-align: center;
+      margin: 3rem 0 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    .era {
+      margin-top: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    .era:nth-of-type(odd) { animation-delay: 0.2s; }
+    .era:nth-of-type(even) { animation-delay: 0.4s; }
+    .era h3 {
+      color: #007a5a;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .era p {
+      line-height: 1.7;
+      font-size: 1.05rem;
+      text-align: justify;
+    }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .back-button {
+      display: inline-block;
+      background-color: #004d3a;
+      color: white;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      margin: 3rem auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .back-button:hover {
+      background-color: #006c52;
+      transform: translateY(-2px);
+    }
+    .center { text-align: center; }
+    footer {
+      background: #003d2c;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner">
+    <h1>All History by Story</h1>
+  </div>
+
+  <div class="content">
+    <p class="center">A gracefully animated, richly detailed voyage spanning early prophets to the global Muslim presence today—grounded in authentic sources.</p>
+
+    <!-- Topics -->
+    <h2>1. Prophet Adam & the Dawn of Humanity</h2>
+    <div class="era"><p>Adam عليه السلام was the first man and prophet, placed in Paradise and commanded to guide humanity. His story sets the foundation for divine guidance and the human test.</p></div>
+
+    <h2>2. Prophets Noah & Hud: Call to Monotheism</h2>
+    <div class="era"><p>Noah and Hud عليهما السلام warned their peoples against idol worship and moral decline, showing early resistance to divine truth.</p></div>
+
+    <h2>3. Abraham: Father of Prophets</h2>
+    <div class="era"><p>Ibrahim عليه السلام exemplified submission, rebuilding the Ka‘bah with his son and rejecting idolatry, standing at the pivot of three monotheistic traditions.</p></div>
+
+    <h2>4. Joseph & the Virtue of Patience</h2>
+    <div class="era"><p>Yusuf عليه السلام endured betrayal and hardship, rising to power in Egypt and demonstrating profound faith and forgiveness.</p></div>
+
+    <h2>5. Moses & the Exodus</h2>
+    <div class="era"><p>Musa عليه السلام led Bani Israel from bondage, received divine law, and often stood alone against Pharaoh’s tyranny.</p></div>
+
+    <h2>6. Jesus: Messiah & Message</h2>
+    <div class="era"><p>Isa عليه السلام confirmed the Torah and brought the Injil, performing miracles and calling for repentance.</p></div>
+
+    <h2>7. Early Predecessors & the Promise of the Final Prophet</h2>
+    <div class="era"><p>Other prophets like Yunus, Shu‘ayb, and Salih relaunched God's teachings in various communities, each fulfilling divine will.</p></div>
+
+    <h2>8. Muhammad ﷺ Receives Revelation (610 CE)</h2>
+    <div class="era"><p>At age 40, the Prophet ﷺ was visited by Jibreel in the Cave of Hira, starting the era of Quranic revelation.</p></div>
+
+    <h2>9. Public Call in Mecca & Boycott</h2>
+    <div class="era"><p>He began preaching publicly in Mecca, facing resistance, economic sanctions, and social ostracism from Quraysh leaders.</p></div>
+
+    <h2>10. Migration to Abyssinia</h2>
+    <div class="era"><p>Sleepless weeks saw early Muslims seeking refuge in Abyssinia, protected under a just Christian ruler.</p></div>
+
+    <h2>11. The Hijrah to Medina (622 CE)</h2>
+    <div class="era"><p>The Prophet ﷺ and companions migrated to Medina, establishing the first Islamic state founded on the Constitution of Medina.</p></div>
+
+    <h2>12. Medina’s Growth: Battles & Treaties</h2>
+    <div class="era"><p>Defensive battles (Badr, Uhud, Trench), the treaty of Hudaybiyyah, and the capturing of Mecca in 630 CE shaped Muslim unity and strength.</p></div>
+
+    <h2>13. Farewell Pilgrimage & Passing (632 CE)</h2>
+    <div class="era"><p>During the final pilgrimage, the Prophet ﷺ delivered the Farewell Sermon. He passed away months later, completing divine revelation.</p></div>
+
+    <h2>14. Caliph Abu Bakr & Compilation of the Qur’an</h2>
+    <div class="era"><p>Abu Bakr led during internal uprisings, and under Caliph Uthman the Qur’an was compiled into a single manuscript.</p></div>
+
+    <h2>15. Caliph Umar: Expansion & Administration</h2>
+    <div class="era"><p>Under Umar, the empire expanded to Syria and Egypt, and administrative institutions like the Islamic calendar were established.</p></div>
+
+    <h2>16. Caliph Uthman & Standardizing Qur’an</h2>
+    <div class="era"><p>Uthman standardized the Qur’an’s written text and defended the frontier regions before his martyrdom.</p></div>
+
+    <h2>17. Caliph Ali & the First Civil War</h2>
+    <div class="era"><p>Ali’s tenure saw the Battle of Camel, the conflict at Siffin, and set precedents for future Islamic jurisprudence and governance.</p></div>
+
+    <h2>18. Umayyads: Empire Building</h2>
+    <div class="era"><p>The Umayyad dynasty established a centralized authority, expanded to Spain (Andalusia), and built the Dome of the Rock.</p></div>
+
+    <h2>19. Abbasid Revolution & Golden Age</h2>
+    <div class="era"><p>The Abbasids shifted the capital to Baghdad, creating the Bayt al-Hikma (House of Wisdom) and fostering scholars such as Al-Khwarizmi, Al-Ghazali.</p></div>
+
+    <h2>20. Islamic Sciences: Era of Discovery</h2>
+    <div class="era"><p>Fields like algebra, medicine, optics, and mapmaking flourished under scholars like Avicenna, Al-Razi, Al-Biruni, and Ibn Rushd.</p></div>
+
+    <h2>21. Crusades & Islamic Response</h2>
+    <div class="era"><p>From 1096 onward, Muslim dynasties defended their lands in regions like Egypt, Syria, and Palestine, with leaders such as Salahuddin Ayyubi.</p></div>
+
+    <h2>22. Mongol Invasion & Istanbul’s Rise</h2>
+    <div class="era"><p>The Mongols sacked Baghdad in 1258, but Mamluks preserved Islamic civilization, and Ottomans established Istanbul as a global center.</p></div>
+
+    <h2>23. Ottomans as Guardians (1453–1924)</h2>
+    <div class="era"><p>The Ottoman Empire united diverse Muslim lands, contributing to architecture (Blue Mosque), law, and maritime trade.</p></div>
+
+    <h2>24. Safavids & Shia Institutionalization</h2>
+    <div class="era"><p>In Iran, the Safavid state made Twelver Shi‘ism the official faith, fostering Persian art, poetry, and religious scholarship.</p></div>
+
+    <h2>25. Mughals: Indo-Islamic Synthesis</h2>
+    <div class="era"><p>Mughal rulers like Akbar and Shah Jahan blended Persian, Indian traditions, constructing monuments like the Taj Mahal and a cosmopolitan culture.</p></div>
+
+    <h2>26. Colonial Encounter & Reform Movements</h2>
+    <div class="era"><p>Colonial rule brought resistance and reform. Figures like Muhammad Abduh, Jamal al-Din al-Afghani, Shah Waliullah sought to revive Islamic thought and governance.</p></div>
+
+    <h2>27. Fall of the Ottoman Caliphate (1924)</h2>
+    <div class="era"><p>Mustafa Kemal abolished the Caliphate, prompting global Muslim soul-searching and new modern Islamic identities.</p></div>
+
+    <h2>28. Emergence of Nation-States</h2>
+    <div class="era"><p>Independent countries like Egypt, Pakistan, Malaysia, Indonesia emerged, negotiating modernity and Islam through constitutions and institutions.</p></div>
+
+    <h2>29. Islam & Globalization (Late 20th–21st c.)</h2>
+    <div class="era"><p>Global Muslim identity grew through media, migration, and education. Interfaith dialogue, economic development, and Islamic finance became prominent.</p></div>
+
+    <h2>30. Today’s Challenges & Opportunities</h2>
+    <div class="era"><p>Contemporary Muslims navigate geopolitics, minority rights, digital outreach, and renewal movements—showing Islam’s resilience and adaptability.</p></div>
+
+    <div class="center">
+      <a class="back-button" href=".html">← Back to Home</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Islamic History Archive — Luxuriously presented with depth and dignity.
+  </footer>
+
+</body>
+</html>
