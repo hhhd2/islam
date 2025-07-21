@@ -9,13 +9,14 @@
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #14213d, #1a1a2e);
-      color: #e0e0e0;
+      background: url('https://www.svgbackgrounds.com/wp-content/uploads/2021/07/islamic-geometry.png');
+      background-size: cover;
+      color: #f4f4f4;
     }
 
     header {
-      background-color: #0f3460;
-      color: #fff;
+      background-color: #064420;
+      color: #ffd700;
       padding: 20px;
       text-align: center;
       font-size: 2rem;
@@ -30,20 +31,20 @@
     }
 
     .scholar {
-      background-color: #1e293b;
+      background-color: rgba(0, 0, 0, 0.7);
       border-radius: 12px;
       padding: 30px;
-      box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .scholar:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
     }
 
     .scholar h2 {
-      color: #00ffd5;
+      color: #98fb98;
       margin-bottom: 15px;
     }
 
@@ -56,8 +57,8 @@
       display: inline-block;
       margin-top: 20px;
       padding: 10px 20px;
-      background-color: #00ffd5;
-      color: #0f0f0f;
+      background-color: #ffd700;
+      color: #064420;
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
@@ -65,13 +66,33 @@
     }
 
     .details-btn:hover {
-      background-color: #00bfa6;
+      background-color: #e6c200;
+    }
+
+    .back-home {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .back-home a {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #064420;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .back-home a:hover {
+      background-color: #03724f;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #0f3460;
+      background-color: #064420;
       color: #aaa;
       font-size: 0.9rem;
     }
@@ -99,9 +120,12 @@
       <p>Ibn al-Haytham, born in 965 CE in Basra, was a pioneering physicist, mathematician, and philosopher, often regarded as the father of modern optics. His work, <em>Book of Optics</em>, corrected ancient theories of vision and introduced a scientific methodology based on experiments. He demonstrated that vision results from light reflecting off objects and entering the eye. Working under the Fatimid Caliphate in Cairo, he also contributed to mechanics, astronomy, and geometry. His approach to scientific inquiry foreshadowed the modern scientific method. Ibn al-Haytham died in 1040 CE, but his legacy endures in the principles of optics and empirical science.</p>
       <a href="ibn-al-haytham.html" class="details-btn">More Details</a>
     </div>
-
-    <!-- More scholars to be added below using the same structure -->
   </div>
+
+  <div class="back-home">
+    <a href="index.html">Back to Home</a>
+  </div>
+
   <footer>
     &copy; 2025 Islamic History Project. All rights reserved.
   </footer>
