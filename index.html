@@ -1,237 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Beyond Our Minds – The Islamic Era</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.png" type="image/png">
-  <link rel="shortcut icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="favicon.png" type="image/png" />
 
-  <!-- Meta Information -->
-  <meta name="description" content="Explore the Islamic Era with Hanzla's 'Beyond Our Minds' — a luxurious web journey through the Caliphate, Golden Age, Scholars, and Inventions that shaped civilization.">
-  <meta name="author" content="Hanzla">
-  <meta name="keywords" content="Islamic history, Islamic scholars, Golden Age of Islam, Caliphate, Islamic inventions, Beyond Our Minds, Hanzla">
+  <meta name="description" content="Explore the Islamic Era with Hanzla's 'Beyond Our Minds' — a luxurious web journey through the Caliphate, Golden Age, Scholars, and Inventions that shaped civilization." />
+  <meta name="author" content="Hanzla" />
+  <meta name="keywords" content="Islamic history, Islamic scholars, Golden Age of Islam, Caliphate, Islamic inventions, Beyond Our Minds, Hanzla" />
 
-  <!-- Social Preview -->
-  <meta property="og:title" content="Beyond Our Minds – The Islamic Era">
-  <meta property="og:description" content="Dive into the Golden Age and wisdom of Islamic history with Hanzla's website.">
-  <meta property="og:image" content="https://hhhd2.github.io/islam/banner.jpg">
-  <meta property="og:url" content="https://hhhd2.github.io/islam/">
-  <meta property="og:type" content="website">
-  <title>Islamic history</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(rgba(0, 77, 38, 0.3), rgba(0, 77, 38, 0.3)), url('pexels-mitchel3uo-3645123.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #1c1c1c;
-    backdrop-filter: blur(3px);
-  }
+  <meta property="og:title" content="Beyond Our Minds – The Islamic Era" />
+  <meta property="og:description" content="Dive into the Golden Age and wisdom of Islamic history with Hanzla's website." />
+  <meta property="og:image" content="https://hhhd2.github.io/islam/banner.jpg" />
+  <meta property="og:url" content="https://hhhd2.github.io/islam/" />
+  <meta property="og:type" content="website" />
 
-  .site-header {
-    background-color: rgba(0, 77, 38, 0.9);
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    backdrop-filter: blur(6px);
-  }
-
-  .site-header .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
-
-  .site-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.2rem;
-    padding: 0;
-    margin: 0;
-  }
-
-  .site-header nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  .hero {
-    text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('pexels-mitchel3uo-3645123.jpg') no-repeat center center;
-    background-size: cover;
-    padding: 2rem 1rem;
-    color: white;
-  }
-
-  .hero h4 {
-    margin-bottom: 0.5rem;
-    color: #ffffff;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: #ffffff;
-  }
-
-  .quote {
-    font-style: italic;
-    font-size: 1.1rem;
-    color: white;
-  }
-
-  .search-box {
-    margin-top: 1.5rem;
-  }
-
-  .search-box input {
-    padding: 0.5rem;
-    width: 250px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-
-  .search-box button {
-    padding: 0.5rem 1rem;
-    background-color: #006633;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    margin-left: 0.5rem;
-    cursor: pointer;
-  }
-
-  .search-box #suggestions {
-    margin-top: 0.5rem;
-  }
-
-  .hero-img {
-    margin-top: 2rem;
-    width: 90%;
-    max-height: 660px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(24, 21, 21, 0.3);
-  }
-
-  .card-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem;
-    backdrop-filter: blur(4px);
-  }
-
-  .card {
-    background: linear-gradient(to bottom, #043c1b, #015529);
-    color: #f0f0f0;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    padding: 1rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-
-  .card:hover {
-    transform: scale(1.03);
-    background-color: #0f5b2d;
-  }
-
-  .card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-  }
-
-  .card h3 {
-    margin-top: 0.5rem;
-    font-size: 1.2rem;
-    color: #e6ffe6;
-  }
-
-  .comments {
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(3px);
-  }
-
-  .comments h2 {
-    margin-bottom: 1rem;
-    color: #00331a;
-  }
-
-  .comments textarea {
-    width: 100%;
-    height: 120px;
-    padding: 1rem;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    background-color: #f6fff8;
-  }
-
-  .comments button {
-    margin-top: 1rem;
-    padding: 0.6rem 1.5rem;
-    background-color: #00994d;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-
-  .site-footer {
-    background-color: rgba(0, 51, 26, 0.95);
-    color: white;
-    padding: 1.5rem;
-    text-align: center;
-    backdrop-filter: blur(5px);
-  }
-
-  .footer-img {
-    width: 80px;
-    margin-bottom: 0.5rem;
-  }
-
-  /* Mobile responsiveness improvements */
-  @media (max-width: 600px) {
-    .hero h1 {
-      font-size: 2rem;
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
     }
 
-    .hero-img {
-      width: 100%;
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(rgba(0, 77, 38, 0.3), rgba(0, 77, 38, 0.3)),
+        url('pexels-mitchel3uo-3645123.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #1c1c1c;
+      backdrop-filter: blur(3px);
+      transition: background 0.4s ease, color 0.3s ease;
+      overflow-x: hidden;
     }
 
-    .search-box input {
-      width: 100%;
-      margin-bottom: 0.5rem;
-    }
-
-    .search-box button {
-      width: 100%;
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     .site-header {
-      flex-direction: column;
-      align-items: flex-start;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(0, 77, 38, 0.9);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .site-header:hover {
+      background-color: rgba(0, 77, 38, 1);
+    }
+
+    .site-header .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
     }
 
     .site-header nav ul {
-      flex-direction: column;
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .site-header nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .site-header nav a:hover {
+      color: #c2f0c2;
+    }
+
+    .hero {
+      text-align: center;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('pexels-mitchel3uo-3645123.jpg') no-repeat center center;
+      background-size: cover;
+      padding: 2rem 1rem;
+      color: white;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .quote {
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #e8ffe8;
+    }
+
+    .search-box {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 0.5rem;
     }
-  }
-</style>
+
+    .search-box input {
+      padding: 0.6rem;
+      width: 250px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .search-box input:focus {
+      box-shadow: 0 0 8px rgba(0, 100, 50, 0.6);
+    }
+
+    .search-box button {
+      padding: 0.6rem 1rem;
+      background-color: #006633;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .search-box button:hover {
+      background-color: #00994d;
+    }
+
+    .hero-img {
+      margin-top: 2rem;
+      width: 90%;
+      max-height: 660px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 6px 12px rgba(24, 21, 21, 0.4);
+      transition: transform 0.4s ease;
+    }
+
+    .hero-img:hover {
+      transform: scale(1.02);
+    }
+
+    .card-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      padding: 2.5rem 2rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .card {
+      background: linear-gradient(to bottom, #043c1b, #015529);
+      color: #f0f0f0;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+      text-align: center;
+      padding: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.03);
+      background-color: #0f5b2d;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      margin-top: 0.5rem;
+      font-size: 1.25rem;
+      color: #e6ffe6;
+    }
+
+    .comments {
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(3px);
+    }
+
+    .comments h2 {
+      margin-bottom: 1rem;
+      color: #00331a;
+    }
+
+    .comments textarea {
+      width: 100%;
+      height: 120px;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      background-color: #f6fff8;
+    }
+
+    .comments button {
+      margin-top: 1rem;
+      padding: 0.6rem 1.5rem;
+      background-color: #00994d;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .comments button:hover {
+      background-color: #00b35c;
+    }
+
+    .site-footer {
+      background-color: rgba(0, 51, 26, 0.95);
+      color: white;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      backdrop-filter: blur(5px);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .footer-img {
+      width: 80px;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero-img {
+        width: 100%;
+      }
+
+      .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .site-header nav ul {
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+    }
+  </style>
+
   <meta name="google-site-verification" content="l_tCb0b1JRkmE-kd0cTmcp0zAicA9ZRrkAPzaN7eczo" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="logo">Islamic History</div>
@@ -247,7 +292,6 @@
         <li><a href="Web description.html">Web description</a></li>
       </ul>
     </nav>
-    <div class="auth" id="auth"></div>
   </header>
 
   <section class="hero">
@@ -280,7 +324,7 @@
     </div>
     <div class="card" onclick="navigate('islamic empires.html')">
       <img src="11457.png" alt="islamic Empires" />
-      <h3>islamic Empires</h3>
+      <h3>Islamic Empires</h3>
     </div>
     <div class="card" onclick="navigate('scholars.html')">
       <img src="pngtree-microscope-with-lab-glassware-science-laboratory-research-and-development-concept-image_16413146.jpg" alt="Notable Scholars" />
@@ -345,6 +389,5 @@
       }
     }
   </script>
-
 </body>
 </html>
