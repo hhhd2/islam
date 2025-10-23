@@ -1,215 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All History by Story</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&family=Playfair+Display&display=swap" rel="stylesheet">
-
-  <!-- SEO -->
-  <meta name="description" content="Explore the journey of Islamic history from Adam (A.S) to the modern era, beautifully narrated by Hanzla.">
-  <meta name="author" content="Hanzla">
-  <meta name="keywords" content="Islamic history, prophets, caliphate, golden age, empires, beyond our minds, Hanzla">
-  <link rel="icon" href="kaba.png" type="image/png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All History by Story – Beyond Our Minds</title>
+  <meta name="description" content="Discover Islamic history through stories — from the rise of Islam to the Golden Age and its lasting legacy.">
+  <link rel="icon" href="kaba.png" type="image/png">
 
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Playfair Display','Noto Naskh Arabic', serif;
-      background: url('https://www.transparenttextures.com/patterns/arabesque.png') repeat;
-      background-color: #fdfcf8;
-      color: #2e2e2e;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #0a0a0a, #050505);
+      color: #f4f4f4;
       overflow-x: hidden;
     }
 
-    /* Banner */
-    .banner {
-      width: 100%;
-      height: 280px;
-      background: url('grand-arch.jpg') center/cover no-repeat fixed;
-      position: relative;
-      border-bottom: 5px solid #007a5a;
-      overflow: hidden;
-    }
-
-    /* Transparent geometric overlay on banner */
-    .banner::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url('https://www.transparenttextures.com/patterns/arabesque.png') repeat;
-      opacity: 0.2;
-    }
-
-    .banner h1 {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #fff;
-      font-size: 2.6rem;
-      text-shadow: 0 3px 6px rgba(0,0,0,0.6);
-      animation: fadeInDown 1.2s ease forwards;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translate(-50%, -30px); }
-      to { opacity: 1; transform: translate(-50%, 0); }
-    }
-
-    /* Content */
-    .content {
-      padding: 2.5rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      color: #004d3a;
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      background-image: url('alaqsa.png'); /* <-- upload your transparent Al-Aqsa image with this name */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
       text-align: center;
-      margin: 3rem 0 1.5rem;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s forwards;
+      padding: 120px 20px 100px 20px;
+      position: relative;
+      border-bottom: 2px solid gold;
     }
 
-    .era {
-      margin-top: 1.8rem;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1.2s forwards;
-      background: rgba(255,255,255,0.85);
-      border-left: 4px solid #007a5a;
-      padding: 1rem 1.2rem;
-      border-radius: 10px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    header h1 {
+      font-size: 3rem;
+      color: gold;
+      text-shadow: 0 0 20px gold;
+      animation: glow 3s ease-in-out infinite alternate;
     }
 
-    .era:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    @keyframes glow {
+      from { text-shadow: 0 0 10px gold; }
+      to { text-shadow: 0 0 25px #f5d742, 0 0 40px gold; }
     }
 
-    @keyframes fadeInUp {
+    nav {
+      background-color: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+      border-bottom: 1px solid gold;
+    }
+
+    nav a {
+      color: #f4f4f4;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: gold;
+    }
+
+    section {
+      padding: 80px 10%;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .era h3 {
-      color: #007a5a;
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
+    section h2 {
+      font-size: 2.5rem;
+      color: gold;
+      margin-bottom: 30px;
+      text-transform: uppercase;
     }
 
-    .era p {
-      line-height: 1.7;
-      font-size: 1.05rem;
-      text-align: justify;
+    section p {
+      font-size: 1.1rem;
+      color: #dcdcdc;
+      line-height: 1.8;
+      max-width: 900px;
+      margin: 0 auto 40px auto;
     }
 
-    /* Back Button */
-    .back-button {
-      display: inline-block;
-      background-color: #004d3a;
-      color: white;
-      text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: bold;
-      margin: 3rem auto;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    .divider {
+      width: 100px;
+      height: 3px;
+      background: gold;
+      margin: 30px auto;
+      border-radius: 5px;
     }
 
-    .back-button:hover {
-      background-color: #007a5a;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-    }
-
-    .center { text-align: center; }
-
-    /* Footer with transparent pattern */
     footer {
-      background: linear-gradient(180deg, #003d2c 95%, #00281d);
-      color: white;
+      background: rgba(0, 0, 0, 0.9);
       text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 5rem;
-      position: relative;
-    }
-
-    footer::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url('https://www.transparenttextures.com/patterns/arabesque.png') repeat;
-      opacity: 0.15;
+      color: #aaa;
+      padding: 40px 10px;
+      border-top: 2px solid gold;
     }
 
     footer p {
-      position: relative;
-      z-index: 1;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
+      font-size: 0.9rem;
     }
 
-    /* Scroll reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
+    footer a {
+      color: gold;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .banner h1 { font-size: 1.8rem; bottom: 15px; }
-      .content { padding: 1.2rem; }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
-
-  <div class="banner">
+  <header>
     <h1>All History by Story</h1>
-  </div>
+  </header>
 
-  <div class="content">
-    <!-- Your existing sections remain untouched -->
-    <!-- (Same text as your original code) -->
+  <nav>
+    <a href="#rise">Rise of Islam</a>
+    <a href="#golden">Golden Age</a>
+    <a href="#legacy">Legacy</a>
+  </nav>
 
-    <div class="center">
-      <a class="back-button" href="index.html">← Back to Home</a>
-    </div>
-  </div>
+  <section id="rise">
+    <h2>The Rise of Islam</h2>
+    <div class="divider"></div>
+    <p>
+      The story of Islam begins in the heart of Arabia, in a time of darkness and division. When Prophet Muhammad (peace be upon him) received the first revelation, it marked the dawn of a new era — one that brought light to humanity. 
+      Within decades, Islam united tribes, cultures, and languages under a message of justice, knowledge, and compassion.
+    </p>
+    <p>
+      The early Caliphate established foundations of governance, scholarship, and equality that would echo for centuries. From Madinah’s Charter to the House of Wisdom, every step reflected the balance of faith and intellect.
+    </p>
+  </section>
+
+  <section id="golden">
+    <h2>The Golden Age</h2>
+    <div class="divider"></div>
+    <p>
+      The Golden Age of Islam was not only a time of power but of enlightenment. Cities like Baghdad, Córdoba, and Damascus became centers of learning, where Muslims, Christians, and Jews studied side by side.
+    </p>
+    <p>
+      Scholars such as Al-Khwarizmi, Ibn Sina, and Al-Biruni transformed science, medicine, and mathematics. Their works lit the path for the Renaissance, proving that faith and reason can coexist and elevate humanity together.
+    </p>
+  </section>
+
+  <section id="legacy">
+    <h2>The Legacy Lives On</h2>
+    <div class="divider"></div>
+    <p>
+      Today, the echoes of that era live in our languages, architecture, and ethics. From the domes of Istanbul to the libraries of Andalusia, the Islamic civilization left marks of wisdom and light.
+    </p>
+    <p>
+      “All History by Story” invites you to rediscover that legacy — not as the past, but as guidance for the future. Knowledge, when shared with purpose, becomes eternal.
+    </p>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Islamic History Archive — Luxuriously presented with depth and dignity.</p>
+    <p>&copy; 2025 <a href="https://hhhd2.github.io/islam/">Beyond Our Minds</a> — Crafted with faith, art, and history.</p>
   </footer>
-
-  <!-- Scroll reveal script -->
-  <script>
-    const reveals = document.querySelectorAll(".era, h2");
-    function reveal() {
-      for (let i = 0; i < reveals.length; i++) {
-        const windowHeight = window.innerHeight;
-        const elementTop = reveals[i].getBoundingClientRect().top;
-        const elementVisible = 100;
-        if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add("active");
-        }
-      }
-    }
-    window.addEventListener("scroll", reveal);
-    reveal();
-  </script>
-
 </body>
 </html>
