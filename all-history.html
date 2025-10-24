@@ -1,24 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>All History by Story</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&family=Playfair+Display&display=swap" rel="stylesheet">
+  <title>All History by Story - Professional Edition</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&family=Playfair+Display:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
+      box-sizing: border-box;
       margin: 0;
       font-family: 'Playfair Display','Noto Naskh Arabic', serif;
-        url('https://www.transparenttextures.com/patterns/arabesque.png') repeat, #1a1a1a;
-        background: linear-gradient(135deg, #0d1117, #1b1f24, #24292f);
-  color: #e6e6e6;
-  font-family: 'Poppins', sans-serif;
-  transition: background 0.5s ease;
       overflow-x: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .arabic-font { font-family: 'Amiri', 'Noto Naskh Arabic', serif; }
+    .playfair-font { font-family: 'Playfair Display', serif; }
+    
+    /* Classical Ottoman Patterns */
+    .islamic-pattern {
+      background-image: 
+        /* Ottoman star and polygon pattern */
+        radial-gradient(circle at 50% 50%, rgba(201, 162, 39, 0.15) 3px, transparent 3px),
+        /* Interlacing geometric lines */
+        linear-gradient(0deg, rgba(212, 175, 55, 0.08) 1px, transparent 1px),
+        linear-gradient(60deg, rgba(201, 162, 39, 0.06) 1px, transparent 1px),
+        linear-gradient(120deg, rgba(212, 175, 55, 0.06) 1px, transparent 1px);
+      background-size: 48px 48px, 24px 24px, 24px 24px, 24px 24px;
+    }
+    
+    .geometric-ornament {
+      background-image: 
+        /* Ottoman tulip and carnation motifs */
+        repeating-linear-gradient(45deg, 
+          rgba(201, 162, 39, 0.12) 0px, 
+          rgba(201, 162, 39, 0.12) 2px, 
+          transparent 2px, 
+          transparent 12px),
+        repeating-linear-gradient(-45deg, 
+          rgba(212, 175, 55, 0.08) 0px, 
+          rgba(212, 175, 55, 0.08) 1px, 
+          transparent 1px, 
+          transparent 16px),
+        /* Central medallion pattern */
+        radial-gradient(ellipse at center, 
+          rgba(201, 162, 39, 0.1) 0%, 
+          transparent 30%);
+      background-size: 32px 32px, 48px 48px, 80px 80px;
+    }
+    
+    .arabesque-texture {
+      background-image: 
+        /* Ottoman calligraphy-inspired flowing lines */
+        repeating-linear-gradient(30deg, 
+          rgba(201, 162, 39, 0.08) 0px, 
+          transparent 2px, 
+          transparent 8px, 
+          rgba(212, 175, 55, 0.06) 10px, 
+          transparent 12px, 
+          transparent 20px),
+        repeating-linear-gradient(150deg, 
+          rgba(201, 162, 39, 0.06) 0px, 
+          transparent 1px, 
+          transparent 6px, 
+          rgba(212, 175, 55, 0.08) 8px, 
+          transparent 10px, 
+          transparent 18px),
+        /* Subtle hexagonal Ottoman tile pattern */
+        repeating-conic-gradient(from 0deg at 50% 50%, 
+          rgba(201, 162, 39, 0.04) 0deg 60deg, 
+          transparent 60deg 120deg, 
+          rgba(212, 175, 55, 0.04) 120deg 180deg, 
+          transparent 180deg 240deg, 
+          rgba(201, 162, 39, 0.04) 240deg 300deg, 
+          transparent 300deg 360deg);
+      background-size: 36px 36px, 28px 28px, 56px 56px;
+      background-position: 0 0, 14px 14px, 28px 28px;
+    }
+    
+    /* Theme Variables */
+    :root {
+      --bg-primary: linear-gradient(135deg, #0d1117, #1b1f24, #24292f);
+      --bg-secondary: rgba(255,255,255,0.04);
+      --text-primary: #e6e6e6;
+      --text-secondary: #f1f1f1;
+      --accent-gold: #c9a227;
+      --accent-gold-hover: #b38b1d;
+      --border-color: rgba(201, 162, 39, 0.2);
+    }
+    
+    .dark {
+      --bg-primary: linear-gradient(135deg, #0d1117, #1b1f24, #24292f);
+      --bg-secondary: rgba(255,255,255,0.04);
+      --text-primary: #e6e6e6;
+      --text-secondary: #f1f1f1;
+      --accent-gold: #c9a227;
+      --accent-gold-hover: #b38b1d;
+      --border-color: rgba(201, 162, 39, 0.2);
+    }
+    
+    .light {
+      --bg-primary: linear-gradient(135deg, #f8f9fa, #ffffff, #f1f3f4);
+      --bg-secondary: rgba(201, 162, 39, 0.08);
+      --text-primary: #2d3748;
+      --text-secondary: #4a5568;
+      --accent-gold: #b8860b;
+      --accent-gold-hover: #9a7209;
+      --border-color: rgba(184, 134, 11, 0.3);
+    }
+    
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    
+    /* Floating Animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .float-animation { animation: float 6s ease-in-out infinite; }
+    
+    /* Glow Effects */
+    .glow-gold {
+      box-shadow: 0 0 20px rgba(201, 162, 39, 0.3);
+    }
+    
+    .dark .glow-gold {
+      box-shadow: 0 0 30px rgba(201, 162, 39, 0.4);
+    }
+    
+    .light .glow-gold {
+      box-shadow: 0 0 20px rgba(184, 134, 11, 0.3);
+    }
+    
+    /* Premium Card Effects */
+    .premium-card {
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+    
+    .premium-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    
+    .light .premium-card:hover {
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    }
+    
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+    ::-webkit-scrollbar-thumb { 
+      background: linear-gradient(45deg, var(--accent-gold), var(--accent-gold-hover));
+      border-radius: 4px;
     }
 
     .banner {
       width: 100%;
-      height: 260px;
+      height: 320px;
       background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
         url('alaqsa.png') center/cover no-repeat;
       border-bottom: 4px solid #c9a227;
@@ -33,24 +176,26 @@
       font-size: 2.6rem;
       text-shadow: 0 2px 8px rgba(0,0,0,0.8);
       background: rgba(0,0,0,0.4);
-      padding: 10px 20px;
-      border-radius: 10px;
+      padding: 15px 25px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
     }
 
     #stopAudio {
       position: fixed;
-      top: 15px;
+      top: 80px;
       right: 15px;
       background: rgba(201,162,39,0.9);
       color: #000;
       border: none;
       border-radius: 50px;
-      padding: 10px 18px;
+      padding: 12px 20px;
       font-weight: bold;
       cursor: pointer;
       z-index: 1000;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
       transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
     }
     #stopAudio:hover {
       background: #b38b1d;
@@ -59,17 +204,19 @@
 
     .content {
       padding: 2rem;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
     h2 {
-      color: #c9a227;
+      color: var(--accent-gold);
       text-align: center;
       margin: 3rem 0 1.5rem;
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 0.8s forwards;
+      font-size: 2.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
 
     .era {
@@ -77,6 +224,11 @@
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 0.8s forwards;
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 15px;
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(10px);
     }
 
     .era:nth-of-type(odd) { animation-delay: 0.2s; }
@@ -84,19 +236,21 @@
 
     .era h3 {
       color: #d4af37;
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
     }
 
     .era p {
-      line-height: 1.8;
-      font-size: 1.05rem;
+      line-height: 1.9;
+      font-size: 1.1rem;
       text-align: justify;
-      color: #f1f1f1;
-      background: rgba(255,255,255,0.04);
-      padding: 0.8rem 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.25);
+      color: var(--text-secondary);
+      background: var(--bg-secondary);
+      padding: 1rem 1.2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+      border-left: 4px solid var(--accent-gold);
     }
 
     @keyframes fadeInUp {
@@ -105,38 +259,156 @@
 
     .back-button {
       display: inline-block;
-      background-color: #c9a227;
+      background: linear-gradient(45deg, var(--accent-gold), var(--accent-gold-hover));
       color: #000;
       text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
+      padding: 1rem 2rem;
+      border-radius: 12px;
       font-weight: bold;
       margin: 3rem auto;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-      transition: background 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
     }
 
     .back-button:hover {
-      background-color: #b38b1d;
-      transform: translateY(-2px);
+      background: linear-gradient(45deg, var(--accent-gold-hover), var(--accent-gold));
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     }
 
     .center { text-align: center; }
 
     footer {
-      background: rgba(0, 0, 0, 0.75);
-      color: #c9a227;
+      background: rgba(0, 0, 0, 0.85);
+      color: var(--accent-gold);
       text-align: center;
-      padding: 1.5rem 1rem;
+      padding: 2rem 1rem;
       margin-top: 4rem;
-      border-top: 2px solid #c9a227;
+      border-top: 3px solid var(--accent-gold);
+      backdrop-filter: blur(10px);
+    }
+    
+    /* Reading Mode */
+    .reading-mode {
+      background: #1a1a1a !important;
+      color: #f0f0f0 !important;
+    }
+    
+    .reading-mode .era {
+      background: rgba(255,255,255,0.02) !important;
+    }
+    
+    .reading-mode .era p {
+      background: rgba(255,255,255,0.03) !important;
+      font-size: 1.2rem !important;
+      line-height: 2 !important;
     }
   </style>
 </head>
-<body>
+<body class="dark">
 
-  <div class="banner">
-    <h1>All History by Story</h1>
+  <!-- Professional Header -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-black/80 border-b border-yellow-600/30 islamic-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-yellow-600 to-amber-600 rounded-lg flex items-center justify-center glow-gold">
+            <span class="text-white font-bold text-lg arabic-font">ت</span>
+          </div>
+          <h1 class="text-xl font-bold bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent playfair-font">
+            History Stories
+          </h1>
+        </div>
+        
+        <!-- Controls -->
+        <div class="flex items-center space-x-4">
+          <!-- Audio Control -->
+          <button id="audioToggle" class="p-2 rounded-full bg-yellow-600/20 text-yellow-400 hover:bg-yellow-600/30 transition-all glow-gold">
+            <svg id="audioIcon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.797L4.828 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.828l3.555-3.797a1 1 0 011.617.797zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.983 5.983 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.984 3.984 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          
+          <!-- Theme Toggle -->
+          <button onclick="toggleTheme()" class="p-2 rounded-full bg-yellow-600/20 text-yellow-400 hover:bg-yellow-600/30 transition-all glow-gold">
+            <svg id="themeIcon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          
+          <!-- Settings -->
+          <button onclick="toggleSettings()" class="p-2 rounded-full bg-yellow-600/20 text-yellow-400 hover:bg-yellow-600/30 transition-all">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Enhanced Banner -->
+  <div class="banner geometric-ornament overflow-hidden">
+    <!-- Background Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70"></div>
+    
+    <!-- Floating Decorative Elements -->
+    <div class="absolute top-10 left-10 w-20 h-20 bg-gradient-to-br from-yellow-400/20 to-amber-400/20 rounded-full blur-xl float-animation"></div>
+    <div class="absolute bottom-10 right-10 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-orange-400/20 rounded-full blur-xl float-animation" style="animation-delay: -3s;"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 text-center">
+      <div class="mb-4">
+        <span class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-yellow-600 to-amber-600 text-white text-sm font-medium rounded-full glow-gold">
+          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          Premium Historical Experience
+        </span>
+      </div>
+      
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 playfair-font">
+        All History by Story
+      </h1>
+      
+      <p class="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+        Explore history through captivating stories and impactful events
+      </p>
+    </div>
+  </div>
+
+  <!-- Settings Panel -->
+  <div id="settingsPanel" class="fixed top-16 right-4 w-80 bg-black/95 backdrop-blur-md rounded-xl shadow-2xl border border-yellow-600/30 p-6 transform translate-x-full transition-transform duration-300 z-40 arabesque-texture">
+    <h3 class="text-lg font-semibold mb-4 playfair-font text-yellow-400">Customization Settings</h3>
+    
+    <!-- Font Size -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2 text-gray-300">Font Size</label>
+      <input type="range" min="14" max="22" value="16" onchange="changeFontSize(this.value)" class="w-full accent-yellow-600">
+    </div>
+    
+    <!-- Reading Mode -->
+    <div class="mb-4">
+      <label class="flex items-center space-x-2">
+        <input type="checkbox" onchange="toggleReadingMode(this.checked)" class="accent-yellow-600">
+        <span class="text-sm text-gray-300">Comfortable Reading Mode</span>
+      </label>
+    </div>
+    
+    <!-- Pattern Toggle -->
+    <div class="mb-4">
+      <label class="flex items-center space-x-2">
+        <input type="checkbox" checked onchange="togglePatterns(this.checked)" class="accent-yellow-600">
+        <span class="text-sm text-gray-300">Decorative Patterns</span>
+      </label>
+    </div>
+    
+    <!-- Close Button -->
+    <button onclick="toggleSettings()" class="w-full bg-gradient-to-r from-yellow-600 to-amber-600 text-white py-2 rounded-lg hover:from-yellow-700 hover:to-amber-700 transition-all glow-gold">
+      Close
+    </button>
   </div>
 
   <button id="stopAudio">Stop Audio</button>
@@ -146,46 +418,269 @@
     Your browser does not support the audio element.
   </audio>
 
-  <div class="content">
-    <h2>1. Prophet Adam & the Dawn of Humanity</h2>
-    <div class="era">
+  <div class="content arabesque-texture">
+    <h2 class="playfair-font">1. Prophet Adam & the Dawn of Humanity</h2>
+    <div class="era premium-card">
       <p>Adam عليه السلام was the first man and prophet, placed in Paradise and commanded to guide humanity. His story sets the foundation for divine guidance and the human test.</p>
     </div>
-    <h2>2. Prophets Noah & Hud: Call to Monotheism</h2> <div class="era"><p>Noah and Hud عليهما السلام warned their peoples against idol worship and moral decline, showing early resistance to divine truth.</p></div> <h2>3. Abraham: Father of Prophets</h2> <div class="era"><p>Ibrahim عليه السلام exemplified submission, rebuilding the Ka‘bah with his son and rejecting idolatry, standing at the pivot of three monotheistic traditions.</p></div> <h2>4. Joseph & the Virtue of Patience</h2> <div class="era"><p>Yusuf عليه السلام endured betrayal and hardship, rising to power in Egypt and demonstrating profound faith and forgiveness.</p></div> <h2>5. Moses & the Exodus</h2> <div class="era"><p>Musa عليه السلام led Bani Israel from bondage, received divine law, and often stood alone against Pharaoh’s tyranny.</p></div> <h2>6. Jesus: Messiah & Message</h2> <div class="era"><p>Isa عليه السلام confirmed the Torah and brought the Injil, performing miracles and calling for repentance.</p></div> <h2>7. Early Predecessors & the Promise of the Final Prophet</h2> <div class="era"><p>Other prophets like Yunus, Shu‘ayb, and Salih relaunched God's teachings in various communities, each fulfilling divine will.</p></div> <h2>8. Muhammad ﷺ Receives Revelation (610 CE)</h2> <div class="era"><p>At age 40, the Prophet ﷺ was visited by Jibreel in the Cave of Hira, starting the era of Quranic revelation.</p></div> <h2>9. Public Call in Mecca & Boycott</h2> <div class="era"><p>He began preaching publicly in Mecca, facing resistance, economic sanctions, and social ostracism from Quraysh leaders.</p></div> <h2>10. Migration to Abyssinia</h2> <div class="era"><p>Sleepless weeks saw early Muslims seeking refuge in Abyssinia, protected under a just Christian ruler.</p></div> <h2>11. The Hijrah to Medina (622 CE)</h2> <div class="era"><p>The Prophet ﷺ and companions migrated to Medina, establishing the first Islamic state founded on the Constitution of Medina.</p></div> <h2>12. Medina’s Growth: Battles & Treaties</h2> <div class="era"><p>Defensive battles (Badr, Uhud, Trench), the treaty of Hudaybiyyah, and the capturing of Mecca in 630 CE shaped Muslim unity and strength.</p></div> <h2>13. Farewell Pilgrimage & Passing (632 CE)</h2> <div class="era"><p>During the final pilgrimage, the Prophet ﷺ delivered the Farewell Sermon. He passed away months later, completing divine revelation.</p></div> <h2>14. Caliph Abu Bakr & Compilation of the Qur’an</h2> <div class="era"><p>Abu Bakr led during internal uprisings, and under Caliph Uthman the Qur’an was compiled into a single manuscript.</p></div> <h2>15. Caliph Umar: Expansion & Administration</h2> <div class="era"><p>Under Umar, the empire expanded to Syria and Egypt, and administrative institutions like the Islamic calendar were established.</p></div> <h2>16. Caliph Uthman & Standardizing Qur’an</h2> <div class="era"><p>Uthman standardized the Qur’an’s written text and defended the frontier regions before his martyrdom.</p></div> <h2>17. Caliph Ali & the First Civil War</h2> <div class="era"><p>Ali’s tenure set precedents for future Islamic jurisprudence and governance.</p></div> <h2>18. Umayyads: Empire Building</h2> <div class="era"><p>The Umayyad dynasty established a centralized authority, expanded to Spain (Andalusia), and built the Dome of the Rock.</p></div> <h2>19. Abbasid Revolution & Golden Age</h2> <div class="era"><p>The Abbasids shifted the capital to Baghdad, creating the Bayt al-Hikma (House of Wisdom) and fostering scholars such as Al-Khwarizmi, Al-Ghazali.</p></div> <h2>20. Islamic Sciences: Era of Discovery</h2> <div class="era"><p>Fields like algebra, medicine, optics, and mapmaking flourished under scholars like Avicenna, Al-Razi, Al-Biruni, and Ibn Rushd.</p></div> <h2>21. Crusades & Islamic Response</h2> <div class="era"><p>From 1096 onward, Muslim dynasties defended their lands in regions like Egypt, Syria, and Palestine, with leaders such as Salahuddin Ayyubi.</p></div> <h2>22. Mongol Invasion & Istanbul’s Rise</h2> <div class="era"><p>The Mongols sacked Baghdad in 1258, but Mamluks preserved Islamic civilization, and Ottomans established Istanbul as a global center.</p></div> <h2>23. Ottomans as Guardians (1453–1924)</h2> <div class="era"><p>The Ottoman Empire united diverse Muslim lands, contributing to architecture (Blue Mosque), law, and maritime trade.</p></div> <h2>24. Safavids & Shia Institutionalization</h2> <div class="era"><p>In Iran, the Safavid state made Twelver Shi‘ism the official faith, fostering Persian art, poetry, and religious scholarship.</p></div> <h2>25. Mughals: Indo-Islamic Synthesis</h2> <div class="era"><p>Mughal rulers like Akbar and Shah Jahan blended Persian, Indian traditions, constructing monuments like the Taj Mahal and a cosmopolitan culture.</p></div> <h2>26. Colonial Encounter & Reform Movements</h2> <div class="era"><p>Colonial rule brought resistance and reform. Figures like Muhammad Abduh, Jamal al-Din al-Afghani, Shah Waliullah sought to revive Islamic thought and governance.</p></div> <h2>27. Fall of the Ottoman Caliphate (1924)</h2> <div class="era"><p>Mustafa Kemal abolished the Caliphate, prompting global Muslim soul-searching and new modern Islamic identities.</p></div> <h2>28. Emergence of Nation-States</h2> <div class="era"><p>Independent countries like Egypt, Pakistan, Malaysia, Indonesia emerged, negotiating modernity and Islam through constitutions and institutions.</p></div> <h2>29. Islam & Globalization (Late 20th–21st c.)</h2> <div class="era"><p>Global Muslim identity grew through media, migration, and education. Interfaith dialogue, economic development, and Islamic finance became prominent.</p></div> <h2>30. Today’s Challenges & Opportunities</h2> <div class="era"><p>Contemporary Muslims navigate geopolitics, minority rights, digital outreach, and renewal movements—showing Islam’s resilience and adaptability.</p></div>
+    
+    <h2 class="playfair-font">2. Prophets Noah & Hud: Call to Monotheism</h2>
+    <div class="era premium-card">
+      <p>Noah and Hud عليهما السلام warned their peoples against idol worship and moral decline, showing early resistance to divine truth.</p>
+    </div>
+    
+    <h2 class="playfair-font">3. Abraham: Father of Prophets</h2>
+    <div class="era premium-card">
+      <p>Ibrahim عليه السلام exemplified submission, rebuilding the Ka'bah with his son and rejecting idolatry, standing at the pivot of three monotheistic traditions.</p>
+    </div>
+    
+    <h2 class="playfair-font">4. Joseph & the Virtue of Patience</h2>
+    <div class="era premium-card">
+      <p>Yusuf عليه السلام endured betrayal and hardship, rising to power in Egypt and demonstrating profound faith and forgiveness.</p>
+    </div>
+    
+    <h2 class="playfair-font">5. Moses & the Exodus</h2>
+    <div class="era premium-card">
+      <p>Musa عليه السلام led Bani Israel from bondage, received divine law, and often stood alone against Pharaoh's tyranny.</p>
+    </div>
+    
+    <h2 class="playfair-font">6. Jesus: Messiah & Message</h2>
+    <div class="era premium-card">
+      <p>Isa عليه السلام confirmed the Torah and brought the Injil, performing miracles and calling for repentance.</p>
+    </div>
+    
+    <h2 class="playfair-font">7. Early Predecessors & the Promise of the Final Prophet</h2>
+    <div class="era premium-card">
+      <p>Other prophets like Yunus, Shu'ayb, and Salih relaunched God's teachings in various communities, each fulfilling divine will.</p>
+    </div>
+    
+    <h2 class="playfair-font">8. Muhammad ﷺ Receives Revelation (610 CE)</h2>
+    <div class="era premium-card">
+      <p>At age 40, the Prophet ﷺ was visited by Jibreel in the Cave of Hira, starting the era of Quranic revelation.</p>
+    </div>
+    
+    <h2 class="playfair-font">9. Public Call in Mecca & Boycott</h2>
+    <div class="era premium-card">
+      <p>He began preaching publicly in Mecca, facing resistance, economic sanctions, and social ostracism from Quraysh leaders.</p>
+    </div>
+    
+    <h2 class="playfair-font">10. Migration to Abyssinia</h2>
+    <div class="era premium-card">
+      <p>Sleepless weeks saw early Muslims seeking refuge in Abyssinia, protected under a just Christian ruler.</p>
+    </div>
+
+    <h2 class="playfair-font">11. The Hijrah to Medina (622 CE)</h2>
+    <div class="era premium-card">
+      <p>The Prophet ﷺ and companions migrated to Medina, establishing the first Islamic state founded on the Constitution of Medina.</p>
+    </div>
+
+    <h2 class="playfair-font">12. Medina's Growth: Battles & Treaties</h2>
+    <div class="era premium-card">
+      <p>Defensive battles (Badr, Uhud, Trench), the treaty of Hudaybiyyah, and the capturing of Mecca in 630 CE shaped Muslim unity and strength.</p>
+    </div>
+
+    <h2 class="playfair-font">13. Farewell Pilgrimage & Passing (632 CE)</h2>
+    <div class="era premium-card">
+      <p>During the final pilgrimage, the Prophet ﷺ delivered the Farewell Sermon. He passed away months later, completing divine revelation.</p>
+    </div>
+
+    <h2 class="playfair-font">14. Caliph Abu Bakr & Compilation of the Qur'an</h2>
+    <div class="era premium-card">
+      <p>Abu Bakr led during internal uprisings, and under Caliph Uthman the Qur'an was compiled into a single manuscript.</p>
+    </div>
+
+    <h2 class="playfair-font">15. Caliph Umar: Expansion & Administration</h2>
+    <div class="era premium-card">
+      <p>Under Umar, the empire expanded to Syria and Egypt, and administrative institutions like the Islamic calendar were established.</p>
+    </div>
+
+    <h2 class="playfair-font">16. Caliph Uthman & Standardizing Qur'an</h2>
+    <div class="era premium-card">
+      <p>Uthman standardized the Qur'an's written text and defended the frontier regions before his martyrdom.</p>
+    </div>
+
+    <h2 class="playfair-font">17. Caliph Ali & the First Civil War</h2>
+    <div class="era premium-card">
+      <p>Ali's tenure set precedents for future Islamic jurisprudence and governance.</p>
+    </div>
+
+    <h2 class="playfair-font">18. Umayyads: Empire Building</h2>
+    <div class="era premium-card">
+      <p>The Umayyad dynasty established a centralized authority, expanded to Spain (Andalusia), and built the Dome of the Rock.</p>
+    </div>
+
+    <h2 class="playfair-font">19. Abbasid Revolution & Golden Age</h2>
+    <div class="era premium-card">
+      <p>The Abbasids shifted the capital to Baghdad, creating the Bayt al-Hikma (House of Wisdom) and fostering scholars such as Al-Khwarizmi, Al-Ghazali.</p>
+    </div>
+
+    <h2 class="playfair-font">20. Islamic Sciences: Era of Discovery</h2>
+    <div class="era premium-card">
+      <p>Fields like algebra, medicine, optics, and mapmaking flourished under scholars like Avicenna, Al-Razi, Al-Biruni, and Ibn Rushd.</p>
+    </div>
+
+    <h2 class="playfair-font">21. Crusades & Islamic Response</h2>
+    <div class="era premium-card">
+      <p>From 1096 onward, Muslim dynasties defended their lands in regions like Egypt, Syria, and Palestine, with leaders such as Salahuddin Ayyubi.</p>
+    </div>
+
+    <h2 class="playfair-font">22. Mongol Invasion & Istanbul's Rise</h2>
+    <div class="era premium-card">
+      <p>The Mongols sacked Baghdad in 1258, but Mamluks preserved Islamic civilization, and Ottomans established Istanbul as a global center.</p>
+    </div>
+
+    <h2 class="playfair-font">23. Ottomans as Guardians (1453–1924)</h2>
+    <div class="era premium-card">
+      <p>The Ottoman Empire united diverse Muslim lands, contributing to architecture (Blue Mosque), law, and maritime trade.</p>
+    </div>
+
+    <h2 class="playfair-font">24. Safavids & Shia Institutionalization</h2>
+    <div class="era premium-card">
+      <p>In Iran, the Safavid state made Twelver Shi'ism the official faith, fostering Persian art, poetry, and religious scholarship.</p>
+    </div>
+
+    <h2 class="playfair-font">25. Mughals: Indo-Islamic Synthesis</h2>
+    <div class="era premium-card">
+      <p>Mughal rulers like Akbar and Shah Jahan blended Persian, Indian traditions, constructing monuments like the Taj Mahal and a cosmopolitan culture.</p>
+    </div>
+
+    <h2 class="playfair-font">26. Colonial Encounter & Reform Movements</h2>
+    <div class="era premium-card">
+      <p>Colonial rule brought resistance and reform. Figures like Muhammad Abduh, Jamal al-Din al-Afghani, Shah Waliullah sought to revive Islamic thought and governance.</p>
+    </div>
+
+    <h2 class="playfair-font">27. Fall of the Ottoman Caliphate (1924)</h2>
+    <div class="era premium-card">
+      <p>Mustafa Kemal abolished the Caliphate, prompting global Muslim soul-searching and new modern Islamic identities.</p>
+    </div>
+
+    <h2 class="playfair-font">28. Emergence of Nation-States</h2>
+    <div class="era premium-card">
+      <p>Independent countries like Egypt, Pakistan, Malaysia, Indonesia emerged, negotiating modernity and Islam through constitutions and institutions.</p>
+    </div>
+
+    <h2 class="playfair-font">29. Islam & Globalization (Late 20th–21st c.)</h2>
+    <div class="era premium-card">
+      <p>Global Muslim identity grew through media, migration, and education. Interfaith dialogue, economic development, and Islamic finance became prominent.</p>
+    </div>
+
+    <h2 class="playfair-font">30. Today's Challenges & Opportunities</h2>
+    <div class="era premium-card">
+      <p>Contemporary Muslims navigate geopolitics, minority rights, digital outreach, and renewal movements—showing Islam's resilience and adaptability.</p>
+    </div>
 
     <div class="center">
-      <a class="back-button" href="index.html">← Back to Home</a>
+      <a href="#" class="back-button glow-gold">Back to Main Page</a>
     </div>
   </div>
 
-  <footer>
-    &copy; 2025 Islamic History Archive — Luxuriously presented with depth and dignity.
+  <footer class="islamic-pattern">
+    <p class="playfair-font">© 2024 All History by Story - All Rights Reserved</p>
+    <p class="playfair-font mt-2">A Journey Through Rich Islamic History</p>
   </footer>
 
   <script>
-    const audio = document.getElementById('bgAudio');
-    const stopBtn = document.getElementById('stopAudio');
-
-    // Try to play automatically (browser policy might require user interaction)
-    window.addEventListener('load', () => {
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          console.log("Autoplay blocked — user must interact.");
-        });
+    // Theme Management
+    let isDark = true;
+    let isAudioPlaying = true;
+    
+    function toggleTheme() {
+      isDark = !isDark;
+      const html = document.documentElement;
+      const body = document.body;
+      const themeIcon = document.getElementById('themeIcon');
+      
+      if (isDark) {
+        html.classList.remove('light');
+        html.classList.add('dark');
+        body.classList.remove('light');
+        body.classList.add('dark');
+        themeIcon.innerHTML = `<path fill-rule="evenodd" d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" clip-rule="evenodd"></path>`;
+      } else {
+        html.classList.remove('dark');
+        html.classList.add('light');
+        body.classList.remove('dark');
+        body.classList.add('light');
+        themeIcon.innerHTML = `<path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>`;
       }
-    });
-
-    stopBtn.addEventListener('click', () => {
-      if (!audio.paused) {
+    }
+    
+    // Settings Panel
+    function toggleSettings() {
+      const panel = document.getElementById('settingsPanel');
+      panel.classList.toggle('translate-x-full');
+    }
+    
+    function changeFontSize(size) {
+      document.documentElement.style.fontSize = size + 'px';
+    }
+    
+    function toggleReadingMode(enabled) {
+      const body = document.body;
+      if (enabled) {
+        body.classList.add('reading-mode');
+      } else {
+        body.classList.remove('reading-mode');
+      }
+    }
+    
+    function togglePatterns(enabled) {
+      const patterns = document.querySelectorAll('.islamic-pattern, .geometric-ornament, .arabesque-texture');
+      patterns.forEach(pattern => {
+        pattern.style.backgroundImage = enabled ? '' : 'none';
+      });
+    }
+    
+    // Audio Management
+    const audio = document.getElementById('bgAudio');
+    const stopButton = document.getElementById('stopAudio');
+    const audioToggle = document.getElementById('audioToggle');
+    const audioIcon = document.getElementById('audioIcon');
+    
+    function updateAudioIcon() {
+      if (isAudioPlaying) {
+        audioIcon.innerHTML = `<path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.797L4.828 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.828l3.555-3.797a1 1 0 011.617.797zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.983 5.983 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.984 3.984 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd"></path>`;
+      } else {
+        audioIcon.innerHTML = `<path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.797L4.828 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.828l3.555-3.797a1 1 0 011.617.797zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>`;
+      }
+    }
+    
+    function toggleAudio() {
+      if (isAudioPlaying) {
         audio.pause();
-        stopBtn.textContent = "Play Audio";
+        isAudioPlaying = false;
+        stopButton.textContent = 'Play Audio';
       } else {
         audio.play();
-        stopBtn.textContent = "Stop Audio";
+        isAudioPlaying = true;
+        stopButton.textContent = 'Stop Audio';
       }
+      updateAudioIcon();
+    }
+    
+    stopButton.addEventListener('click', toggleAudio);
+    audioToggle.addEventListener('click', toggleAudio);
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      updateAudioIcon();
+      
+      // Close settings panel when clicking outside
+      document.addEventListener('click', function(event) {
+        const settingsPanel = document.getElementById('settingsPanel');
+        const settingsButton = event.target.closest('button[onclick="toggleSettings()"]');
+        
+        if (!settingsPanel.contains(event.target) && !settingsButton && !settingsPanel.classList.contains('translate-x-full')) {
+          toggleSettings();
+        }
+      });
+      
+      // Smooth scroll for back button
+      document.querySelector('.back-button').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     });
   </script>
-
-</body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'993b6120e3f9d56b',t:'MTc2MTMyODg4Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
